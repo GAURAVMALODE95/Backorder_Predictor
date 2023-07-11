@@ -1,7 +1,7 @@
 import streamlit as st
-import joblib
+import pickle
 
-model = joblib.load('model1.pkl')
+model = pickle.load(open('model1.pkl', 'rb'))
 
 @st.cache
 def predict_backorder(national_inv, lead_time, sales_1_month, pieces_past_due, perf_6_month_avg,
